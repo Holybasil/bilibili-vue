@@ -17,7 +17,7 @@ import path from 'path'
 import routes from './routes'
 import config from '../config/config';
 
- 
+
 const app = new Koa();
 
 onerror(app)
@@ -35,7 +35,7 @@ app.use(async (ctx, next) => {
 	const start = new Date()
 	await next()
 	const ms = new Date() - start
-	console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+	console.log(`${ctx.method} ${ctx.url} - ${ms}ms`) // 后端控制台输出请求处理时间
 })
 
 // routes

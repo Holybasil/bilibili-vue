@@ -8,7 +8,7 @@ const router = Router()
 router.get('/live', async (ctx, next) => {
   let response = await axios.get(liveXhr)
   let data = response.data
-  let result = data.substr(1).substr(0, data.length - 3)
+  let result = data.substring(1, data.length - 1) // 去掉请求字符串的外层括号 解决直播数据错误问题
   ctx.body = JSON.parse(result)
 })
 
